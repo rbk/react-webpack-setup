@@ -8,3 +8,6 @@ create package.json
 babel-core
 babel-loader
 add resolve for importing js files
+
+# Idea
+Create tutorial via GIT branching
