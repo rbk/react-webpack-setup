@@ -7,8 +7,8 @@ Command to watch
 
 # Npm Commands 
 
-sudo npm install webpack --save-dev
-sudo npm install react react-dom --save
-sudo npm install babel-loader babel-core babel-preset-es2015 --save-dev
-sudo npm install webpack-dev-server --save-dev
-sudo npm install babel-preset-react --save-dev
+- sudo npm install webpack --save-dev
+- sudo npm install react react-dom --save
+- sudo npm install babel-loader babel-core babel-preset-es2015 --save-dev
+- sudo npm install webpack-dev-server --save-dev
+- sudo npm install babel-preset-react --save-dev
