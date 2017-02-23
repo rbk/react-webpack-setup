@@ -21815,20 +21815,63 @@ var List = function (_Component) {
   function List(props) {
     _classCallCheck(this, List);
 
-    return _possibleConstructorReturn(this, (List.__proto__ || Object.getPrototypeOf(List)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (List.__proto__ || Object.getPrototypeOf(List)).call(this, props));
+
+    _this.state = {
+      people: []
+    };
+
+    return _this;
   }
 
   _createClass(List, [{
-    key: "componentWillMount",
+    key: 'handleClick',
+    value: function handleClick() {}
+  }, {
+    key: 'componentWillMount',
     value: function componentWillMount() {}
   }, {
-    key: "render",
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.setState({
+        people: [{
+          firstname: 'Richard',
+          lastname: 'Keller'
+        }, {
+          firstname: 'Terrillo',
+          lastname: 'Walls'
+        }, {
+          firstname: 'Patrick',
+          lastname: 'Burris'
+        }]
+      });
+    }
+  }, {
+    key: 'render',
     value: function render() {
 
+      var people = this.state.people.map(function (index, person) {
+        return _react2.default.createElement(
+          'li',
+          { key: index },
+          _react2.default.createElement(
+            'h2',
+            null,
+            person.firsname,
+            ' ',
+            person.lastname
+          )
+        );
+      });
+
       return _react2.default.createElement(
-        "div",
+        'div',
         null,
-        _react2.default.createElement("ul", { id: "list" })
+        _react2.default.createElement(
+          'ul',
+          { id: 'list' },
+          people
+        )
       );
     }
   }]);
