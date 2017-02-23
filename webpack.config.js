@@ -18,25 +18,10 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         loader: 'babel-loader',
-      },
-
-      // json
-      {
-        test: /\.json$/,
-        loader: 'json',
-      },
-
-      // static files
-      {
-        test: /[\s\S]*$/,
-        include: resolve('./assets/dist'),
-        loader: 'file?name=[name].[ext]',
-      },
-
-      // images
-      {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        loader: 'url?limit=10000!image-webpack',
+        exclude: /node_modules/,
+        query: {
+          presets: ['es2015', 'react']
+        }
       }
     ],
   }

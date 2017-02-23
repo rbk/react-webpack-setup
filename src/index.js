@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Hello from '../test-component.js';
+import Hello from './Components/test-component.js';
 
 const app = document.getElementById('app');
 
