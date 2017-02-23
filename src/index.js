@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Hello from './Components/test-component.js';
+import Form from './Components/form-component.js';
 
 const app = document.getElementById('app');
 
 ReactDOM.render(
-  <Hello />,
+  <Form />,
   app
 );

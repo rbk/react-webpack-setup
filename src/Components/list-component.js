@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export default class Hello extends Component {
+export default class List extends Component {
 
   constructor(props) {
     super(props);
@@ -13,7 +13,8 @@ export default class Hello extends Component {
 
     return (
       <div>
-      	Hello World!
+      	<ul id="list">
+      	</ul>
       </div>
     );
   }
