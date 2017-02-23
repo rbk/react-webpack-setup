@@ -13,7 +13,7 @@ export default class Hello extends Component {
 
     return (
       <div>
-      	Hello World!!
+      	Hello World!
       </div>
     );
   }
