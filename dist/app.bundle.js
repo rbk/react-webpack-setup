@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 178);
+/******/ 	return __webpack_require__(__webpack_require__.s = 181);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -21677,34 +21677,7 @@ module.exports = traverseAllChildren;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 177 */,
-/* 178 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _react = __webpack_require__(52);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__(80);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-var _formComponent = __webpack_require__(180);
-
-var _formComponent2 = _interopRequireDefault(_formComponent);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var app = document.getElementById('app');
-
-_reactDom2.default.render(_react2.default.createElement(_formComponent2.default, null), app);
-
-/***/ }),
-/* 179 */,
-/* 180 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21720,7 +21693,7 @@ var _react = __webpack_require__(52);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _listComponent = __webpack_require__(181);
+var _listComponent = __webpack_require__(179);
 
 var _listComponent2 = _interopRequireDefault(_listComponent);
 
@@ -21785,7 +21758,8 @@ var Form = function (_Component) {
 exports.default = Form;
 
 /***/ }),
-/* 181 */
+/* 178 */,
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21880,6 +21854,32 @@ var List = function (_Component) {
 }(_react.Component);
 
 exports.default = List;
+
+/***/ }),
+/* 180 */,
+/* 181 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _react = __webpack_require__(52);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(80);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _formComponent = __webpack_require__(177);
+
+var _formComponent2 = _interopRequireDefault(_formComponent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var app = document.getElementById('app');
+
+_reactDom2.default.render(_react2.default.createElement(_formComponent2.default, null), app);
 
 /***/ })
 /******/ ]);

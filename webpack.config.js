@@ -6,6 +6,7 @@ module.exports = {
   context: path.resolve(__dirname, './src'),
   entry: {
     app: './index.js',
+    db: './db/index.js',
   	vendor: ['react', 'react-dom']
   },
   output: {
@@ -13,7 +14,7 @@ module.exports = {
     filename: '[name].bundle.js',
   },
   module: {
-    loaders: [
+    rules: [
       // babel
       {
         test: /\.(js|jsx)$/,
