@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 181);
+/******/ 	return __webpack_require__(__webpack_require__.s = 178);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -21677,7 +21677,34 @@ module.exports = traverseAllChildren;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 177 */
+/* 177 */,
+/* 178 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _react = __webpack_require__(52);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(80);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _formComponent = __webpack_require__(180);
+
+var _formComponent2 = _interopRequireDefault(_formComponent);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var app = document.getElementById('app');
+
+_reactDom2.default.render(_react2.default.createElement(_formComponent2.default, null), app);
+
+/***/ }),
+/* 179 */,
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21693,7 +21720,7 @@ var _react = __webpack_require__(52);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _listComponent = __webpack_require__(179);
+var _listComponent = __webpack_require__(181);
 
 var _listComponent2 = _interopRequireDefault(_listComponent);
 
@@ -21704,6 +21731,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Db = __webpack_require__(183);
 
 var Form = function (_Component) {
   _inherits(Form, _Component);
@@ -21718,8 +21747,19 @@ var Form = function (_Component) {
     key: 'componentWillMount',
     value: function componentWillMount() {}
   }, {
+    key: 'addTodo',
+    value: function addTodo(text) {
+      // console.log(Db)
+      // return;
+      var todoText = document.getElementById('todo').value;
+      Db.insert(todoText);
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
+      // this.props.todo = ;
 
       return _react2.default.createElement(
         'div',
@@ -21731,21 +21771,14 @@ var Form = function (_Component) {
           _react2.default.createElement(
             'div',
             null,
-            _react2.default.createElement(
-              'label',
-              null,
-              'Add an item:'
-            )
+            _react2.default.createElement('input', { type: 'text', id: 'todo' })
           ),
           _react2.default.createElement(
             'div',
-            null,
-            _react2.default.createElement('input', { type: 'text', name: 'todo' })
-          ),
-          _react2.default.createElement(
-            'div',
-            null,
-            _react2.default.createElement('input', { type: 'submit' })
+            { onClick: function onClick(e) {
+                return _this2.addTodo();
+              } },
+            'Add'
           )
         )
       );
@@ -21758,8 +21791,7 @@ var Form = function (_Component) {
 exports.default = Form;
 
 /***/ }),
-/* 178 */,
-/* 179 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21783,6 +21815,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var Db = __webpack_require__(183);
+
 var List = function (_Component) {
   _inherits(List, _Component);
 
@@ -21790,6 +21824,8 @@ var List = function (_Component) {
     _classCallCheck(this, List);
 
     var _this = _possibleConstructorReturn(this, (List.__proto__ || Object.getPrototypeOf(List)).call(this, props));
+
+    Db.getAll();
 
     _this.state = {
       people: []
@@ -21799,44 +21835,20 @@ var List = function (_Component) {
   }
 
   _createClass(List, [{
-    key: 'handleClick',
-    value: function handleClick() {}
-  }, {
-    key: 'componentWillMount',
-    value: function componentWillMount() {}
-  }, {
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.setState({
-        people: [{
-          firstname: 'Richard',
-          lastname: 'Keller'
-        }, {
-          firstname: 'Terrillo',
-          lastname: 'Walls'
-        }, {
-          firstname: 'Patrick',
-          lastname: 'Burris'
-        }]
-      });
+
+      this.setState({});
     }
   }, {
     key: 'render',
     value: function render() {
-
-      var people = this.state.people.map(function (index, person) {
-        return _react2.default.createElement(
-          'li',
-          { key: index },
-          _react2.default.createElement(
-            'h2',
-            null,
-            person.firsname,
-            ' ',
-            person.lastname
-          )
-        );
-      });
+      var people = '';
+      // let people = this.state.people.map((index, todos) => (
+      // 	<li key={index}>
+      // 		<div>todos.todo</div>
+      // 	</li>
+      // ));
 
       return _react2.default.createElement(
         'div',
@@ -21856,30 +21868,50 @@ var List = function (_Component) {
 exports.default = List;
 
 /***/ }),
-/* 180 */,
-/* 181 */
+/* 182 */,
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _react = __webpack_require__(52);
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-var _react2 = _interopRequireDefault(_react);
+var Db = function Db() {};
 
-var _reactDom = __webpack_require__(80);
+Db.prototype.getAll = function () {
 
-var _reactDom2 = _interopRequireDefault(_reactDom);
+	localStorage.removeItem('todos');
 
-var _formComponent = __webpack_require__(177);
+	var todos = [];
+	var ls = localStorage.getItem('todos');
+	if (typeof ls != 'array') {
+		ls = [];
+	}
+	// todos = JSON.parse(ls);
 
-var _formComponent2 = _interopRequireDefault(_formComponent);
+	if ((typeof todos === 'undefined' ? 'undefined' : _typeof(todos)) === 'object') {
+		// No Todos
+		todos = [];
+	} else {
+		localStorage.setItem('todos', []);
+	}
+	console.log(todos);
+	return todos;
+};
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+Db.prototype.insert = function (todo) {
+	var todos = Db.prototype.getAll();
+	var time = new Date();
+	console.log(todos);
+	console.log(time);
+	console.log(todo);
+	todos.push({ time: time, todo: todo });
+	localStorage.setItem('todos', todos);
+	console.log('time');
+};
 
-var app = document.getElementById('app');
-
-_reactDom2.default.render(_react2.default.createElement(_formComponent2.default, null), app);
+module.exports = new Db();
 
 /***/ })
 /******/ ]);

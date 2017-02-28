@@ -68,29 +68,49 @@
 /************************************************************************/
 /******/ ({
 
-/***/ 178:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var Db = function Db() {};
-
-Db.prototype.testStorage = function () {};
-
-module.exports = new Db();
-
-/***/ }),
-
 /***/ 180:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var DB = __webpack_require__(178);
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-console.log(DB);
+var Db = function Db() {};
+
+Db.prototype.getAll = function () {
+
+	localStorage.removeItem('todos');
+
+	var todos = [];
+	var ls = localStorage.getItem('todos');
+	if (typeof ls != 'array') {
+		ls = [];
+	}
+	// todos = JSON.parse(ls);
+
+	if ((typeof todos === 'undefined' ? 'undefined' : _typeof(todos)) === 'object') {
+		// No Todos
+		todos = [];
+	} else {
+		localStorage.setItem('todos', []);
+	}
+	console.log(todos);
+	return todos;
+};
+
+Db.prototype.insert = function (todo) {
+	var todos = Db.prototype.getAll();
+	var time = new Date();
+	console.log(todos);
+	console.log(time);
+	console.log(todo);
+	todos.push({ time: time, todo: todo });
+	localStorage.setItem('todos', todos);
+	console.log('time');
+};
+
+module.exports = new Db();
 
 /***/ })
 

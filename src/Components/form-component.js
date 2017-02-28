@@ -1,3 +1,4 @@
+var Db = require('../db/index.js');
 import React, {Component} from 'react';
 import List from './list-component.js';
 
@@ -10,15 +11,23 @@ export default class Form extends Component {
   componentWillMount() {
   }
 
+  addTodo(text) {
+    // console.log(Db)
+    // return;
+    let todoText = document.getElementById('todo').value;
+    Db.insert(todoText);
+  }
+
   render() {
+
+    // this.props.todo = ;
 
     return (
       <div>
       	<List />
       	<form>
-      		<div><label>Add an item:</label></div>
-      		<div><input type="text" name="todo" /></div>
-      		<div><input type="submit" /></div>
+      		<div><input type="text" id="todo" /></div>
+      		<div onClick={ e => this.addTodo() }>Add</div>
       	</form>
       </div>
     );

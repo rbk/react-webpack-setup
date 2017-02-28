@@ -1,9 +1,11 @@
+var Db = require('../db/index.js');
 import React, {Component} from 'react';
-
 export default class List extends Component {
 
   constructor(props) {
     super(props);
+
+    Db.getAll();
 
     this.state = {
     	people: []
@@ -11,42 +13,20 @@ export default class List extends Component {
 
   }
 
-  handleClick() {
-
-
-
-  }
-
-  componentWillMount() {
-
-  }
-
   componentDidMount() {
+
 		this.setState({
-			people: [
-				{
-					firstname: 'Richard',
-					lastname: 'Keller',
-				},
-				{
-					firstname: 'Terrillo',
-					lastname: 'Walls',
-				},
-				{
-					firstname: 'Patrick',
-					lastname: 'Burris',
-				},
-			]
+			
 		})
   }
 
   render() {
-
-		let people = this.state.people.map((index, person) => (
-			<li key={index}>
-				<h2>{ person.firsname } { person.lastname }</h2>
-			</li>
-		));
+  	let people = ''
+		// let people = this.state.people.map((index, todos) => (
+		// 	<li key={index}>
+		// 		<div>todos.todo</div>
+		// 	</li>
+		// ));
 
     return (
       <div>
